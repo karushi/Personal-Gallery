@@ -6,5 +6,5 @@ def welcome(request):
     return HttpResponse('Welcome to Photo Gallery')
 
 def welcome(request):
-    return render(request, 'welcome.html')    
+    return render(request, 'welcome.html',{"photos":photos})    
 
