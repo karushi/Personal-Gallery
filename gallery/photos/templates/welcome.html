@@ -1,3 +1,17 @@
+<style>
+        img{
+            width: 400px;
+            height: 400px;
+        }
+
+        h1{
+            text-align: center;
+            color: yellow;
+}
+    </style>
+
+
+
 {%extends 'all-photos/base.html'%}
 {%block content%}
 {{block.super}}
@@ -5,7 +19,14 @@
 
 
 {%for photo in photos %}
+     
     <img src="{{photo.image.url}}" alt="" srcset="">
     <p>{{photo.image_name}}</p>
+    <p>{{photo.location}}</p>
+    <p>{{photo.category}}</p>
+     
+   
+      
+   
 {% endfor %}
 {%endblock%}
