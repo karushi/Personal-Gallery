@@ -10,6 +10,12 @@ class GalleryTestClass(TestCase):
     def test_instance(self):
         self.assertTrue(isinstance(self.photos,Gallery))
 
+#Testing save Method
+def test_save_method(self):
+    self.photos.save_images()
+    gallery = Gallery.objects.all()
+    self.assertTrue(len( gallery)> 0)
+
 
 
 
