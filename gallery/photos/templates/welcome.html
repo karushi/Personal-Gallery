@@ -1,32 +1,31 @@
-<style>
-        img{
-            width: 400px;
-            height: 400px;
-        }
-
-        h1{
-            text-align: center;
-            color: yellow;
-}
-    </style>
-
-
-
 {%extends 'all-photos/base.html'%}
 {%block content%}
 {{block.super}}
 <h1>Welcome to my Gallery</h1>
 
+<div class="container">
+    <div class="row">{%for photo in photos %}
+            <div class="col-md-4">
+                    <div class="card card-cascade wider reverse my-4">
+                            <div class="view overlay">
+                                <img src="{{ photo.image.url }}" class="img-fluid" style="height:250px;width:500px">
+                                   <a href="#!">
+                                    <div class="mask rgba-white-slight"></div>
+                                    </a>
+                            </div>
+                            <div class="card-body text-center">
+                                <h4 class="card-title"><strong><h2>{{ photo.image_name }}</h2></strong></h4>
+                               <p class="card-text" class="badge  badge-pill  badge-secondary"> {{photo.location}} </p>
+                                <p class="card-text"class="badge  badge-pill  badge-secondary"> {{photo.category}} </p>
+                                <a href="image/{{photo.id}}" class="btn btn-primary">See More</a>
+            
+                            </div>
+                            
+                        </div>
+                 </div>
+                 
+            
+            {% endfor %}</div>
 
-{%for photo in photos %}
-     
-    <img src="{{photo.image.url}}" alt="" srcset="">
-    <p>{{photo.image_name}}</p>
-    <p>{{photo.location}}</p>
-    <p>{{photo.category}}</p>
-     
-   
-      
-   
-{% endfor %}
+</div>
 {%endblock%}
