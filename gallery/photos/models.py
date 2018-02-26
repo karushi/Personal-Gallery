@@ -22,10 +22,7 @@ class Meta:
         self.save()
     
 
-    @classmethod
-    def search_by_category(cls, search_category):
-        category = cls.objects.filter(category__icontains=search_category)
-        return category
+  
 
 class Gallery(models.Model):
   image = models.ImageField(upload_to='gallery/', null=True, blank=True)
@@ -60,6 +57,7 @@ class Gallery(models.Model):
   def get_image_by_id(id):
       pass
 
- 
-
-  
+  @classmethod
+  def search_by_category(cls, search_category):
+     category = cls.objects.filter(category__name__icontains=search_category)
+     return category
