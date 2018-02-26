@@ -1,8 +1,11 @@
-   <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        <!-- <p>MY GALLERY</p> -->
+   <nav class="navbar navbar-light" style="background-color: #4ba6e7;">
+     <a class="navbar-brand" href="/" style="color:white">MY GALLERY</a>
+      <form class="form-inline my-2 my-lg-0" role="search" action="{% url 'search_results' %}">
+        <div class="input-group">
+          <input class="form-control mr-sm-2" name="category" type="text" placeholder="Search">
+          <button class="btn my-2 my-sm-0" style="background-color: #2623d8;color:white" type="submit">Search</button>
+        </div>
+        <!-- <p></p> -->
       </form>
     </div>
   </nav>
